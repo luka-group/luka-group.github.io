@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="utf-8">
+      <title>LUKA@USC Comp Sci</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta name="description" content="Research Lab, Home, Velit Aliquet Sagittis University">
+      <meta name="author" content="">
+      <!-- Le styles -->
+      <link href="css/bootstrap.min.css" rel="stylesheet">
+      <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+      <link href="css/theme.css" rel="stylesheet">
+	  <script src="./js/w3data.js"></script>
+   </head>
+   <body>
+      <div class="container">
+         <div w3-include-html="./src/header.html" id="common_header"></div>
+         <hr>
+         <div class="row-fluid">
+            <div class="span12">
+               <section id="statemet">
+                  <div class="page-header">
+                     <h3>Openings</h3>
+                     <hr>
+                  </div>
+				  <p>
+					If you are interested in joining our lab, please take a look at the following opening information.
+				  </p>
+               </section>
+               <hr>
+			   <section id="openings">
+                  <ul>
+					  <li><p>
+					    For prospective Ph.D. students, please apply through the <a href="https://www.cs.usc.edu/ph-d-application-information/">Ph.D. program</a> in the Department of Computer Science and list my name in your application. I will make sure to read your materials. If you would like to reach out to me, please use the email title <i>[PRSP PhD] + your current position and institute/organization</i>, so I can easily pay attention to the message. I will try to read all of the messages, however, I may not be able to reply to all of them. It is usually much easier to start a conversation based on from short email with a concrete motivation.
+					  </p></li>
+					  <li><p>
+					    For master students (and also outstanding undergrads) already at USC, if you are interested in participating in our research, you are welcome to contact me. When you do so, please make sure to briefly introduce your background and past experience related to NLP or ML. For those who already have had strong research experience, we also have part-time RA positions (<a href="https://www.isi.edu/ms_student_positions/jobs">position #1039</a>) available. However, in the past, successful applicants were those who have already had a record of conducting publishable or published research in leading conferences.
+					  </p></li>
+					  <li><p>
+					    If you are a prospective summer intern, you can apply to one of the summer research programs if applicable: <a href="https://www.isi.edu/projects/nlg/summer_internships">NLG Summer Research Intern</a>, <a href="https://viterbigradadmission.usc.edu/sure/">SURE</a>, <a href="https://viterbischool.usc.edu/usc-tsinghua-globalization/usc-thu-research-symposium/">USC-THU Summer Research Program</a>. Otherwise, please send me your request using the email title "[PRSP Summer Visit]" before the end of April.
+					  </p></li>
+					  <li><p>
+					    For Ph.D. and master students who would like me to serve on your dissertation/thesis committees, I am happy to discuss those opportunities if we have common research interests. Please contact me well in advance.
+					  </p></li>
+					  <li><p>
+					    For other types of prospective visiting scholars, please feel free to contact me. Though it is only possible for me to host a visiting scholar if we can find a good match between our group's research topics and yours.
+					  </p></li>
+				  <ul>
+               </section>
+			   <hr>
+			   <section id="openings">
+                  <p>Our lab is located in the <a href="https://www.google.com/maps/place/USC+Information+Sciences+Institute/@33.9800707,-118.4422272,17z/data=!3m1!4b1!4m5!3m4!1s0x80c2ba807e9dc4f7:0xcbfb9ebc54219723!8m2!3d33.980064!4d-118.4400326">ISI building</a> in Marina Del Rey, Suite 834.</p>
+				  <img src="./images/mdr0.jpg" alt="marina_del_rey" class="centered" style="display: block; margin-left: auto; margin-right: auto;">
+               </section>
+            </div>
+         </div>
+      </div>
+      <div w3-include-html="./src/footer.html" id="common_footer"></div>
+	  
+      <!-- Le javascript
+         ================================================== -->
+      <!-- Placed at the end of the document so the pages load faster -->
+      <script src="js/jquery-1.9.1.min.js"></script>
+      <script src="js/bootstrap.min.js"></script>
+	  <script> w3IncludeHTML(include_callback); function include_callback() {$("#nav-open").addClass("active");}</script>
+      <script>
+         $(document).ready(function() {
+             $(document.body).scrollspy({
+                 target: "#navparent"
+             });
+         });
+         
+      </script>
+   </body>
+</html>

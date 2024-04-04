@@ -398,12 +398,12 @@ body>.navbar .brand:hover {
 	text-align: center;
 	text-shadow: 0 1px 3px rgba(0, 0, 0, .4), 0 0 30px rgba(0, 0, 0, .075);
 	background: #990000;
-	background: -moz-linear-gradient(45deg, #990000 0%, #022851 100%);
-	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #990000), color-stop(100%, #990000));
-	background: -webkit-linear-gradient(45deg, #990000 0%, #022851 100%);
-	background: -o-linear-gradient(45deg, #990000 0%, #022851 100%);
-	background: -ms-linear-gradient(45deg, #990000 0%, #022851 100%);
-	background: linear-gradient(45deg, #990000 0%, #022851 100%) repeat;
+	background: -moz-linear-gradient(45deg, #022851 0%, #990000 100%);
+	background: -webkit-gradient(linear, left bottom, right top, color-stop(0%, #022851), color-stop(100%, #022851));
+	background: -webkit-linear-gradient(45deg, #022851 0%, #990000 100%);
+	background: -o-linear-gradient(45deg, #022851 0%, #990000 100%);
+	background: -ms-linear-gradient(45deg, #022851 0%, #990000 100%);
+	background: linear-gradient(45deg, #022851 0%, #990000 100%) repeat;
 	-webkit-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 	-moz-box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);
 	box-shadow: inset 0 3px 7px rgba(0, 0, 0, .2), inset 0 -3px 7px rgba(0, 0, 0, .2);

@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+   <meta charset="utf-8">
+   <title>LUKA@USC Comp Sci</title>
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <meta name="description" content="Language Understanding and Knowledge Acquisition Lab, LUKA @ USC">
+   <meta name="author" content="">
+   <!-- Le styles -->
+   <link href="css/bootstrap.min.css" rel="stylesheet">
+   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
+   <link href="css/theme.css" rel="stylesheet">
+	 <style type="text/css">
+     <
+     .STYLE2 {font-family: Calibri; font-size: 24px; }
+     .STYLE27 {font-family: Calibri; font-size: 16px; }
+     >
+   </style>
+	 <script src="./js/w3data.js"></script>
+  </head>
+  <body>
+   <div class="container">
+     <div w3-include-html="./src/header.html" id="common_header"></div>
+     <hr>
+     <div class="row-fluid">
+      <div class="span12">
+          <div>
+<!--            <div class="row">
+							<div class="col-lg-2 col-md-2 hidden-sm hidden-xs">
+              <img class="pull-left ccg-sidebar" src="./tutorial_files/ccg-sidebar.jpg">
+            </div>-->
+              <h2>Tutorial: <small>NAACL-24: Combating Security and Privacy Issues in the Era of Large Language Models</small></h2>
+
+            <div id="article">
+
+                <h3>Instructors</h3>
+								<a href="https://muhaochen.github.io/" target="_blank">Muhao Chen</a>, <a href="https://xiaocw11.github.io/" target="_blank">Chaowei Xiao</a>, <a href="https://web.cse.ohio-state.edu/~sun.397/">Huan Sun</a>, <a href="https://www.cs.cmu.edu/~leili/">Lei Li</a>, <a href="https://stromberg.ai/">Leon Derczynski</a> and <a href="https://www.eas.caltech.edu/people/anima" target="_blank">Anima Anandkumar</a>.
+                <h3>Date and Time</h3>
+								June 16, 2024.
+							  <h3> Goal of Tutorial:</h3>
+This tutorial seeks to provide a systematic summary of risks and vulnerabilities in security, privacy and copyright aspects of large language models (LLMs), and most recent solutions to address those issues. We will discuss a broad thread of studies that try to answer the following questions: (i) How do we unravel the adversarial threats that attackers may leverage in the training time of LLMs, especially those that may exist in recent paradigms of instruction tuning and RLHF processes? (ii) How do we guard the LLMs against malicious attacks in inference time, such as attacks based on backdoors and jailbreaking? (iii) How do we ensure privacy protection of user information and LLM decisions for Language Model as-a-Service (LMaaS)? (iv) How do we protect the copyright of an LLM? (v) How do we detect and prevent cases where personal or confidential information is leaked during LLM training? (vi) How should we make policies to control against improper usage of LLM-generated content? In addition, will conclude the discussions by outlining emergent challenges in security, privacy and reliability of LLMs that deserve timely investigation by the community.
+								<h3> Introduction</h3>
+Large Language Models have received wide attention from the society. These models have not only shown promising results across NLP tasks, but also emerged to be the backbone of many intelligent systems for web search, education, healthcare, e-commerce and software development. From the societal impact perspective, LLMs like GPT-4 and Chat-GPT have shown significant potential in supporting decision making in many daily-life tasks.
+<p></p>
+Despite the success, the increasingly scaled sizes of LLMs, as well as their growing deployments in systems, services and scientific studies, are bringing along more and more emergent issues in security and privacy. On the one hand, since LLMs are more potent of memorizing vast amount of information, they can definitely memorize well any kind of training data that may lead to adverse behaviors, leading to backdoors that may be leveraged by adversaries to control or hack any high-stake systems that are built on top of the LLMs. In this context, LLMs may also memorize personal and confidential information that exist in corpora and the RLHF process, therefore being prone to various privacy risks including membership inference, training data extraction, and jailbreaking attacks. On the other hand, the wide usage and adaption of LLMs also challenge the copyright protection of models and their outputs. For example, while some models restrict commercial uses or restrict derivatives of license, it is hard to ensure that downstream developers finetuning these models will comply with the licenses. It is also hard to identify improper usage of LLM generated outputs especially in scenarios like peer review and lawsuits where model generated content should be strictly controlled. Moreover, while a number of LLMs are deployed as services, privacy protection of information in both user inputs and model decisions represents another challenge, particularly for healthcare and fintech services.
+<p></p>
+This tutorial presents a comprehensive introduction of frontier research on emergent security and privacy issues in the era of LLMs. In particular, we try to answer the following questions: (i) How do we unravel the adversarial threats in the training time of LLMs, especially those that may exist in recent paradigms of instruction tuning and RLHF processes? (ii) How do we guard the LLMs against malicious attacks in inference time, such as attacks based on backdoors and jailbreaking? (iii) How do we addressing the privacy risks of LLMs, such as ensuring privacy protection of user information and LLM decisions? (iv) How do we protect the copyright of an LLM? (v) How do we detect and prevent cases where personal or confidential information is memorized during LLM training and leaked during inference? (vi) How should we control against improper usage of LLM-generated content?
+<p></p>
+By addressing these critical questions, we believe it is necessary to present a timely tutorial to comprehensively summarize the new frontiers in security and privacy research in NLP, and point out the emerging challenges that deserve further attention of our community. Participants will learn about recent trends and emerging challenges in this topic, representative tools and learning resources to obtain ready-to-use technologies, and how related technologies will realize more responsible usage of LLMs in end-user systems.
+
+<h3>Tutorial Outline</h3>
+
+<h4>Introduction [20 min]<br><a href="./materials/0-Introduction.pdf">handout</a></h4>
+We will begin motivating this topic with a selection of real-world LLM applications that are prone to various kinds of security, privacy and vulnerability issues, and outline the emergent technical challenges we seek to discuss in this tutorial.
+
+<h4>Addressing Training-time Threats to LLMs [35 min] <br><a href="./materials/1-Training-time.pdf">handout</a></h4>
+One significant area of security concern for LLMs is their susceptibility during the training phase. Adversaries can exploit this vulnerability by strategically contaminating a small fraction of the training data and lead to the introduction of backdoors or a significant degradation in model performance. We will begin discussing the training-time threats by delving into various attack types including sample-agnostic attacks like word or sensitive-level trigger attacks, sample-dependent attacks such as syntactic, paraphrasing and back translation attacks. Subsequently, encompassing emergent LLM development processes of instruction tuning and RLHF, we will discuss how attackers may capitalize on these processes, injecting tailored instruction-following examples or manipulating ranking scores to purposefully alter the model’s behavior. We will also shed light on the far-reaching consequences of training-time attacks across diverse LLM applications. Moving forward, we will introduce threat mitigation strategies in three pivotal stages: (i) Data Preparation Stage where defenders are equipped with means to sanitize training data, eliminating potential sources of poisoning; (ii) Model Training Stage where defenders can measure and counteract the influence of poisoned data within the training process; (iii) Inference Stage where defenders can detect and eliminate poisoned data given the compromised model.
+
+<h4>Mitigating Test-time Threats to LLMs [35 min] <br><a href="./materials/2-Test-time.pdf">handout</a></h4>
+Malicious data existing in the training corpora, task instructions and human feedbacks are likely to cause threats to LLMs before they are deployed as Web services. Due to the limited accessibility of model components in these services, mitigation of such threats are realistically be address through test-time defense or detection. In the meantime, new types of vulnerabilities can also be introduced during test-time through adversarial prompts, instructions and few-shot demonstrations. In this part of tutorial, we will first introduce test-time threats to LLMs through prompt injection, malicious task instructions, jailbreaking attacks, adversarial demonstrations, and training-free backdoor attacks. We will then provide insights on mitigating some of those test-time threats based on techniques including prompt robustness estimation, demonstration-based defense, role-playing prompts and ensemble debiasing. While many issues with the test-time threats still remain unaddressed, we will also provide a discussion about how the community should develop to combat those issues.
+
+<h4>Handling Privacy Risks of LLMs [35 min] <br><a href="./materials/3-Privacy">handout</a></h4>
+Along with LLMs’ impressive performance, there have been increasing concerns about their privacy risks. In this part of the tutorial, we will first discuss several privacy risks related to membership inference attack and training data extraction. Next we will discuss privacy-preserving methods in two categories: (i) data sanitization including techniques to detect and remove personal identifier information, or replace sensitive tokens based on differential privacy (DP); (ii) Privacypreserved training, with a focus on methods using DP for training. At last, we discuss existing methods on balancing between privacy and utility, and reflections on what it means for LLMs to preserve privacy, especially on understanding appropriate contexts for sharing information.
+
+
+<h4>Safeguarding LLM Copyright [35 min] <br><a href="./materials/4-Copyright">handout</a></h4>
+Other than direct open source, many companies and organizations offer API access to their LLMsthat may be vulnerable to model extraction attacks via distillation. In this context, we will first describe potential model extraction attacks. We will then present watermark techniques to identify distilled LLMs, including those for MLMs and generative LMs. DRW adds a watermark in the form of a cosine signal that is difficult to eliminate into the output of the protected model. He et al. (2022) propose a lexical watermarking method to identify IP infringement caused by extraction attacks, and CATER proposes conditional watermarking by replacing synonyms of some words based on linguistic features. However, both methods are surface-level watermarks which the adversary can easily bypass by randomly replacing synonyms in the output, making it difficult to verify by probing the suspect models. GINSEW randomly groups vocabulary into two and adds a watermark based on a sinusoidal signal. This signal will be carried over to the distilled model and can be easily detected using Fourier transform.
+
+<h4>Future Research Directions [30 min] <br><a href="https://cogcomp.seas.upenn.edu/page/tutorial.202207/handout/5-Conclusion.pdf">handout</a></h4>
+Enumerating and addressing LLM security and privacy issues is essential to ensure reliable and responsible usage of LLMs in services and downstream systems. However, the community moves at a rapid pace and matching developments in LLM security with formal research and application needs is not trivial. At the end of this tutorial, we outline emergent challenges in this area that deserve timely investigation by the community, including (i) how to protect confidential training data during server-side LLM adaptation, (ii) how to realize selfexplainable defense processes of LLMs, (iii) how to handle private information that has already been captured by LLMs, and (iv) how to document security, privacy, copyright and vulnerability risks to enable more responsible development and deployment of LLMs.
+
+
+
+
+<h3> Resources:</h3>
+<li> <a href="https://muhaochen.github.io/index_files/NAACL_2024_S_and_P.pdf">Tutorial syllabus</a></li>
+<li> <a href="#.zip">Tutorial slides</a></li>
+
+
+
+
+
+</div>
+            </div>
+						
+          </div>
+     </div>
+   </div>
+   <div w3-include-html="./src/footer.html" id="common_footer"></div>
+
+   <!-- Le javascript
+     ================================================== -->
+   <!-- Placed at the end of the document so the pages load faster -->
+   <script src="js/jquery-1.9.1.min.js"></script>
+   <script src="js/bootstrap.min.js"></script>
+	 <script> w3IncludeHTML(include_callback); function include_callback() {$("#nav-publication").addClass("active");}</script>
+   <script>
+     $(document).ready(function() {
+       $(document.body).scrollspy({
+         target: "#navparent"
+       });
+     });
+     
+   </script>
+  </body>
+</html>

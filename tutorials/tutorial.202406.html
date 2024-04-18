@@ -7,9 +7,9 @@
    <meta name="description" content="Language Understanding and Knowledge Acquisition Lab, LUKA @ USC">
    <meta name="author" content="">
    <!-- Le styles -->
-   <link href="css/bootstrap.min.css" rel="stylesheet">
-   <link href="css/bootstrap-responsive.min.css" rel="stylesheet">
-   <link href="css/theme.css" rel="stylesheet">
+   <link href="../css/bootstrap.min.css" rel="stylesheet">
+   <link href="../css/bootstrap-responsive.min.css" rel="stylesheet">
+   <link href="../css/theme.css" rel="stylesheet">
 	 <style type="text/css">
      <
      .STYLE2 {font-family: Calibri; font-size: 24px; }
@@ -20,7 +20,7 @@
   </head>
   <body>
    <div class="container">
-     <div w3-include-html="./src/header.html" id="common_header"></div>
+     <div w3-include-html="../src/header.html" id="common_header"></div>
      <hr>
      <div class="row-fluid">
       <div class="span12">
@@ -50,20 +50,20 @@ By addressing these critical questions, we believe it is necessary to present a 
 
 <h3>Tutorial Outline</h3>
 
-<h4>Introduction [20 min]<br><a href="./materials/0-Introduction.pdf">handout</a></h4>
+<h4>Introduction [20 min]<br><a href="./materials.202406/0-Introduction.pdf">handout</a></h4>
 We will begin motivating this topic with a selection of real-world LLM applications that are prone to various kinds of security, privacy and vulnerability issues, and outline the emergent technical challenges we seek to discuss in this tutorial.
 
-<h4>Addressing Training-time Threats to LLMs [35 min] <br><a href="./materials/1-Training-time.pdf">handout</a></h4>
+<h4>Addressing Training-time Threats to LLMs [35 min] <br><a href="./materials.202406/1-Training-time.pdf">handout</a></h4>
 One significant area of security concern for LLMs is their susceptibility during the training phase. Adversaries can exploit this vulnerability by strategically contaminating a small fraction of the training data and lead to the introduction of backdoors or a significant degradation in model performance. We will begin discussing the training-time threats by delving into various attack types including sample-agnostic attacks like word or sensitive-level trigger attacks, sample-dependent attacks such as syntactic, paraphrasing and back translation attacks. Subsequently, encompassing emergent LLM development processes of instruction tuning and RLHF, we will discuss how attackers may capitalize on these processes, injecting tailored instruction-following examples or manipulating ranking scores to purposefully alter the model’s behavior. We will also shed light on the far-reaching consequences of training-time attacks across diverse LLM applications. Moving forward, we will introduce threat mitigation strategies in three pivotal stages: (i) Data Preparation Stage where defenders are equipped with means to sanitize training data, eliminating potential sources of poisoning; (ii) Model Training Stage where defenders can measure and counteract the influence of poisoned data within the training process; (iii) Inference Stage where defenders can detect and eliminate poisoned data given the compromised model.
 
-<h4>Mitigating Test-time Threats to LLMs [35 min] <br><a href="./materials/2-Test-time.pdf">handout</a></h4>
+<h4>Mitigating Test-time Threats to LLMs [35 min] <br><a href="./materials.202406/2-Test-time.pdf">handout</a></h4>
 Malicious data existing in the training corpora, task instructions and human feedbacks are likely to cause threats to LLMs before they are deployed as Web services. Due to the limited accessibility of model components in these services, mitigation of such threats are realistically be address through test-time defense or detection. In the meantime, new types of vulnerabilities can also be introduced during test-time through adversarial prompts, instructions and few-shot demonstrations. In this part of tutorial, we will first introduce test-time threats to LLMs through prompt injection, malicious task instructions, jailbreaking attacks, adversarial demonstrations, and training-free backdoor attacks. We will then provide insights on mitigating some of those test-time threats based on techniques including prompt robustness estimation, demonstration-based defense, role-playing prompts and ensemble debiasing. While many issues with the test-time threats still remain unaddressed, we will also provide a discussion about how the community should develop to combat those issues.
 
-<h4>Handling Privacy Risks of LLMs [35 min] <br><a href="./materials/3-Privacy">handout</a></h4>
+<h4>Handling Privacy Risks of LLMs [35 min] <br><a href="./materials.202406/3-Privacy">handout</a></h4>
 Along with LLMs’ impressive performance, there have been increasing concerns about their privacy risks. In this part of the tutorial, we will first discuss several privacy risks related to membership inference attack and training data extraction. Next we will discuss privacy-preserving methods in two categories: (i) data sanitization including techniques to detect and remove personal identifier information, or replace sensitive tokens based on differential privacy (DP); (ii) Privacypreserved training, with a focus on methods using DP for training. At last, we discuss existing methods on balancing between privacy and utility, and reflections on what it means for LLMs to preserve privacy, especially on understanding appropriate contexts for sharing information.
 
 
-<h4>Safeguarding LLM Copyright [35 min] <br><a href="./materials/4-Copyright">handout</a></h4>
+<h4>Safeguarding LLM Copyright [35 min] <br><a href="./materials.202406/4-Copyright">handout</a></h4>
 Other than direct open source, many companies and organizations offer API access to their LLMsthat may be vulnerable to model extraction attacks via distillation. In this context, we will first describe potential model extraction attacks. We will then present watermark techniques to identify distilled LLMs, including those for MLMs and generative LMs. DRW adds a watermark in the form of a cosine signal that is difficult to eliminate into the output of the protected model. He et al. (2022) propose a lexical watermarking method to identify IP infringement caused by extraction attacks, and CATER proposes conditional watermarking by replacing synonyms of some words based on linguistic features. However, both methods are surface-level watermarks which the adversary can easily bypass by randomly replacing synonyms in the output, making it difficult to verify by probing the suspect models. GINSEW randomly groups vocabulary into two and adds a watermark based on a sinusoidal signal. This signal will be carried over to the distilled model and can be easily detected using Fourier transform.
 
 <h4>Future Research Directions [30 min] <br><a href="https://cogcomp.seas.upenn.edu/page/tutorial.202207/handout/5-Conclusion.pdf">handout</a></h4>
@@ -86,7 +86,7 @@ Enumerating and addressing LLM security and privacy issues is essential to ensur
           </div>
      </div>
    </div>
-   <div w3-include-html="./src/footer.html" id="common_footer"></div>
+   <div w3-include-html="../src/footer.html" id="common_footer"></div>
 
    <!-- Le javascript
      ================================================== -->
